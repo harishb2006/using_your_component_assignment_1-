@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import Bookcard from "./components/Bookcard.jsx";
 
 function App() {
   const books = [
@@ -34,7 +34,19 @@ function App() {
     },
   ];
 
-  return <>{/* write code to display all the books using */}</>;
+  return (
+    <div className="flex flex-wrap gap-4 p-4 flex-col-1 ">
+      {books.map((book) => (
+        <Bookcard
+          key={book.id}
+          image={book.image}
+          name={book.name}
+          genre={book.genre}
+          author={book.author}
+        />
+      ))}
+    </div>
+  );
 }
 
 export default App;
